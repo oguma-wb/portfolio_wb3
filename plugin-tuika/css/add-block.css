@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+.speech-block,
+.speech-editor {
+    position: relative;
+    min-height: 80px;
+    padding: 0 0 0 100px;
+}
+
+.speech-block::before,
+.speech-editor::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    content: "";
+    background-image: url(../images/speech.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.speech-block p,
+.speech-editor p {
+    position: relative;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+
+.speech-block p::before,
+.speech-editor p::before {
+    position: absolute;
+    top: 10px;
+    left: -16px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-width: 6px 16px 6px 0;
+    border-style: solid;
+    border-color: transparent #f2f2f2 transparent transparent;
+}
+
+.speech-block {
+    margin-bottom: 40px;
+}
+
+.speech-block p {
+    margin-bottom: 0;
+}
+
+@media(max-width: 480px) {
+    .speech-block {
+        position: relative;
+        min-height: 60px;
+        padding: 0 0 0 80px;
+    }
+
+    .speech-block::before,
+    .speech-editor::before {
+        width: 60px;
+        height: 60px;
+    }
+}

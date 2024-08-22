@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+html {
+    font-family: Arial, sans-serif;
+}
+
+/*===============
+ヘッダー
+===============*/
+
+header {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    /* 左揃え表示 */
+    height: 100px;
+    /* 高さ指定をつけてやらないとサブメニューを開いたときに変な事になる。 */
+    max-width: 100%;
+    /* 必要性があまりわからない */
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header nav .main-menu {
+    display: flex;
+    height: 100px;
+    /* サブメニューの底辺にまで色が反映されて困るなら　heightで高さを固定してあげると解決することがあるよ。*/
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.header-list {
+    background-color: rgb(157, 154, 154);
+}
+
+.main-menu {
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-right: 1%;
+}
+
+.main-menu>li {
+    /*position: relative;*/
+    margin-right: 10px;
+    /* 値を調整して間隔を広げる */
+}
+
+.main-menu>li:last-child {
+    margin-right: 0;
+    /* 最後のリンクには余白を設けない */
+}
+
+.main-menu>li>a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.sub-menu {
+    top: 100%;
+    left: 0;
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-menu>li:hover>.sub-menu {
+    /* li:hover　そこにカーソルを合わせるとこの中に書かれているcssのコードが実行される。 */
+    display: block;
+    /* javascriptに書いてあるコードとやっている事は全く一緒。どっちでも動くよ。 */
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+.sub-menu li a:hover {
+    background-color: rgb(142, 241, 167);
+}
+
+
+
+/*===============
+メイン
+===============*/
+
+body {
+    background-color: #f5f5ef;
+}
+
+.top-images {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.swiper {
+    width: 1600px;
+    max-width: 80%;
+    height: 550px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.sakana {
+    color: rgb(9, 91, 245);
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: rgb(45, 34, 194);
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.menu-image img {
+    width: 650px;
+    height: 400px;
+    max-width: 100%;
+}
+
+.menu-text p {
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .menu-item {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu-item img {
+        margin-right: 20px;
+    }
+}
+
+.setumei {
+    color: rgb(250, 96, 224);
+    font-weight: bold;
+}
+
+
+/*===============
+フッター
+===============*/
+
+/* コピーライト */
+p.copyright {
+    font-size: 0.8em;
+    /* フォントサイズを小さく設定 */
+    text-align: center;
+    /* 中央揃え */
+    margin-top: 30px;
+    /* 上の余白 */
+    background-color: gray;
+}
